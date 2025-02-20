@@ -22,7 +22,11 @@ pip3 install python-can
 pip3 install piper_sdk
 ```
 
-can模块激活说明[can README](./can_config.MD)
+| |说明|
+|---|---|
+|can模块激活说明|[can README](./can_config.MD)|
+|V1 Demo说明|[V1 Demo](./V1/README.MD)|
+|V2 Demo说明|[V2 Demo](./V2/README.MD)|
 
 ## demo说明
 
