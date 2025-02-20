@@ -1,4 +1,4 @@
-# Piper 机械臂sdk部分demo
+# Piper 机械臂sdk(V1) demo
 
 [EN](README(EN).MD)
 
@@ -14,6 +14,8 @@ Test:
 
 ### 安装依赖
 
+注:python-can>=4.3.1
+
 ```shell
 pip3 install python-can
 ```
@@ -22,13 +24,34 @@ pip3 install python-can
 pip3 install piper_sdk
 ```
 
-| |说明|
-|---|---|
-|can模块激活说明|[can README](./can_config.MD)|
-|V1 Demo说明|[V1 Demo](./V1/README.MD)|
-|V2 Demo说明|[V2 Demo](./V2/README.MD)|
+can模块激活说明[can README](./can_config.MD)
 
 ## demo说明
+
+```shell
+V1
+├── motor_max_acc_limit_config.py
+├── piper_disable.py
+├── piper_enable.py
+├── piper_end_pose.py
+├── piper_gripper_ctrl.py
+├── piper_gripper_zero_set.py
+├── piper_init_default.py
+├── piper_joint_ctrl.py
+├── piper_master_config.py
+├── piper_moveC.py
+├── piper_read_arm_motor_max_acc_limit.py
+├── piper_read_arm_motor_max_angle_spd.py
+├── piper_read_end_pose.py
+├── piper_reset.py
+├── piper_set_mit.py
+├── piper_slave_config.py
+├── piper_status.py
+├── piper_stop.py
+├── read_gripper_status.py
+├── read_joint_state.py
+└── read_piper_hardware.py
+```
 
 |文件 |说明|
 |---|---|
@@ -53,9 +76,5 @@ pip3 install piper_sdk
 |`read_gripper_status.py`|机械臂夹爪状态读取|
 |`read_joint_state.py`|读取关节角消息并打印|
 |`read_piper_hardware.py`|读取机械臂主控固件版本|
-|`V2_gripper_param_config.py`|V2版本夹爪参数设定|
-|`V2_installation_pos.py`|V2版本设定安装位置为水平正装|
-|`V2_joint_mit_ctrl.py`|V2版本sdk单独电机mit参数设定|
-|`V2_motor_max_spd_set.py`|V2版本sdk电机单独设定某个关节电机的最大速度限制|
 
 注意：如果是在机械臂处于主动臂模式下，发送设置为从动臂指令后需要重新启动机械臂，机械臂才会切换到从动臂模式

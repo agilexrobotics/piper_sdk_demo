@@ -1,4 +1,4 @@
-# Piper 机械臂sdk部分demo
+# Piper 机械臂sdk(V2)demo
 
 [EN](README(EN).MD)
 
@@ -14,21 +14,50 @@ Test:
 
 ### 安装依赖
 
+注:python-can>=4.3.1
+
 ```shell
 pip3 install python-can
 ```
+
+注:piper_sdk>=0.1.9
 
 ```shell
 pip3 install piper_sdk
 ```
 
-| |说明|
-|---|---|
-|can模块激活说明|[can README](./can_config.MD)|
-|V1 Demo说明|[V1 Demo](./V1/README.MD)|
-|V2 Demo说明|[V2 Demo](./V2/README.MD)|
+can模块激活说明[can README](./can_config.MD)
 
 ## demo说明
+
+```shell
+V2
+├── motor_max_acc_limit_config.py
+├── piper_disable.py
+├── piper_enable.py
+├── piper_end_pose.py
+├── piper_gripper_ctrl.py
+├── piper_gripper_zero_set.py
+├── piper_init_default.py
+├── piper_joint_ctrl.py
+├── piper_master_config.py
+├── piper_moveC.py
+├── piper_read_arm_motor_max_acc_limit.py
+├── piper_read_arm_motor_max_angle_spd.py
+├── piper_read_end_pose.py
+├── piper_reset.py
+├── piper_set_mit.py
+├── piper_slave_config.py
+├── piper_status.py
+├── piper_stop.py
+├── read_gripper_status.py
+├── read_joint_state.py
+├── read_piper_hardware.py
+├── V2_gripper_param_config.py
+├── V2_installation_pos.py
+├── V2_joint_mit_ctrl.py
+└── V2_motor_max_spd_set.py
+```
 
 |文件 |说明|
 |---|---|

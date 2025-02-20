@@ -1,6 +1,6 @@
-# Piper sdk demo
+# Piper Robotic Arm SDK Demo
 
-[CN](README.MD)
+[中文](README.MD)
 
 ![ubuntu](https://img.shields.io/badge/Ubuntu-20.04-orange.svg)
 
@@ -10,7 +10,9 @@ Test:
 |---|---|
 |![python3.8](https://img.shields.io/badge/Python-3.8-blue.svg)|![Pass](https://img.shields.io/badge/Pass-blue.svg)|
 
-## Install dependencies
+## Installation Instructions
+
+### Install Dependencies
 
 ```shell
 pip3 install python-can
@@ -20,56 +22,105 @@ pip3 install python-can
 pip3 install piper_sdk
 ```
 
-can activate instructions [can README](./can_config.MD)
+For CAN module activation, refer to [can README](./can_config.MD)
 
-## demo instruction
+## Demo Explanation
 
 ```shell
-.
-├── piper_disable.py        # 失能机械臂 Disable robotic arm
-├── piper_enable.py         # 使能机械臂 Enable robotics arm
-├── piper_joint_ctrl.py     # 机械臂关节控制 Arm joint control
-├── piper_master_config.py  # 将机械臂设置为主动臂 Set the arm as a master arm
-├── piper_slave_config.py   # 将机械臂设置为从动臂 Set the arm as a slave arm
-└── read_joint_state.py     # 读取关节角消息并打印 Read and print joint state
+├── V1
+│   ├── can_config.MD
+│   ├── interface_disconnect.py
+│   ├── motor_max_acc_limit_config.py
+│   ├── piper_disable.py
+│   ├── piper_enable.py
+│   ├── piper_end_pose.py
+│   ├── piper_gripper_ctrl.py
+│   ├── piper_gripper_zero_set.py
+│   ├── piper_init_default.py
+│   ├── piper_joint_ctrl.py
+│   ├── piper_master_config.py
+│   ├── piper_moveC.py
+│   ├── piper_multi_interface_instance.py
+│   ├── piper_read_arm_motor_max_acc_limit.py
+│   ├── piper_read_arm_motor_max_angle_spd.py
+│   ├── piper_read_end_pose.py
+│   ├── piper_read_fk.py
+│   ├── piper_read_high_msg.py
+│   ├── piper_read_slow_msg.py
+│   ├── piper_reset.py
+│   ├── piper_set_mit.py
+│   ├── piper_slave_config.py
+│   ├── piper_status.py
+│   ├── piper_stop.py
+│   ├── read_all_fps.py
+│   ├── read_gripper_status.py
+│   ├── read_joint_state.py
+│   ├── README(EN).MD
+│   ├── README.MD
+│   └── read_piper_hardware.py
+└── V2
+    ├── can_config.MD
+    ├── interface_disconnect.py
+    ├── motor_max_acc_limit_config.py
+    ├── piper_disable.py
+    ├── piper_enable.py
+    ├── piper_end_pose.py
+    ├── piper_gripper_ctrl.py
+    ├── piper_gripper_zero_set.py
+    ├── piper_init_default.py
+    ├── piper_joint_ctrl.py
+    ├── piper_master_config.py
+    ├── piper_moveC.py
+    ├── piper_multi_interface_instance.py
+    ├── piper_read_arm_motor_max_acc_limit.py
+    ├── piper_read_arm_motor_max_angle_spd.py
+    ├── piper_read_end_pose.py
+    ├── piper_read_fk.py
+    ├── piper_read_high_msg.py
+    ├── piper_read_slow_msg.py
+    ├── piper_reset.py
+    ├── piper_set_mit.py
+    ├── piper_slave_config.py
+    ├── piper_status.py
+    ├── piper_stop.py
+    ├── read_all_fps.py
+    ├── read_gripper_status.py
+    ├── read_joint_state.py
+    ├── README(EN).MD
+    ├── README.MD
+    ├── read_piper_hardware.py
+    ├── V2_gripper_param_config.py
+    ├── V2_installation_pos.py
+    ├── V2_joint_mit_ctrl.py
+    └── V2_motor_max_spd_set.py
 ```
 
-Note: If the robot is in the master arm mode, you need to restart the robot after sending the command to set it as a slave arm, and the robot will switch to the slave arm mode.
+|File |Description|
+|---|---|
+|`motor_max_acc_limit_config.py`|Sets the maximum acceleration limit for a specific joint motor|
+|`piper_disable.py`|Disables the robotic arm|
+|`piper_enable.py`|Enables the robotic arm|
+|`piper_end_pose.py`|Controls the robotic arm's end pose|
+|`piper_gripper_ctrl.py`|Controls the robotic arm's gripper|
+|`piper_gripper_zero_set.py`|Sets the gripper to its zero position|
+|`piper_init_default.py`|Sets all joint limits, joint max speed, and joint acceleration to default values|
+|`piper_joint_ctrl.py`|Controls the robotic arm's joints|
+|`piper_master_config.py`|Sets the robotic arm to master arm mode|
+|`piper_moveC.py`|Sets the robotic arm to master arm mode|
+|`piper_read_arm_motor_max_acc_limit.py`|Reads the maximum acceleration limits for all motors|
+|`piper_read_arm_motor_max_angle_spd.py`|Reads the maximum speed limits for all motors of the robotic arm|
+|`piper_read_end_pose.py`|Reads the end pose of the robotic arm|
+|`piper_reset.py`|Resets the robotic arm; must be done after setting to teaching mode|
+|`piper_set_mit.py`|Sets the robotic arm to MIT mode, for faster response|
+|`piper_slave_config.py`|Sets the robotic arm to slave arm mode|
+|`piper_status.py`|Reads the robotic arm's status|
+|`piper_stop.py`|Stops the robotic arm's slow fall; needs reset and re-enable twice after use|
+|`read_gripper_status.py`|Reads the gripper status|
+|`read_joint_state.py`|Reads and prints joint angle messages|
+|`read_piper_hardware.py`|Reads the robotic arm's main controller firmware version|
+|`V2_gripper_param_config.py`|V2 version of the gripper parameter settings|
+|`V2_installation_pos.py`|V2 version for setting the installation position to horizontal|
+|`V2_joint_mit_ctrl.py`|V2 version for setting individual motor MIT parameters|
+|`V2_motor_max_spd_set.py`|V2 version for setting the maximum speed limit of a specific joint motor|
 
-## Use two arm to remote control
-
-### Hardware connection
-
-- Diagram
-
-![ ](./asserts/接线图.PNG)
-
-1. Set one of the robotic arms as the master arm and the other as the slave arm (as shown in the demo above), then power off both robotic arms.
-2. Connect the two robotic arms to a CAN module, and connect the CANs of the master and slave arms.
-3. Power on the slave arm first, then the master arm, wait a few seconds, and then you can perform remote control.
-4. If it fails, check whether the CAN line is connected properly, and try to power it off and on again.
-
-### Read the master-slave data
-
-See the interface description in the SDK for details. Here is just a brief description
-
-#### Reading Master Arm Messages
-
-The functions `GetArmJointMsgs` and `GetArmGripperMsgs` are used to obtain the slave robotic arm joint messages and gripper messages (raw messages).
-
-The functions `GetArmJointCtrl` and `GetArmGripperCtrl` are used to obtain the master robotic arm joint messages and gripper messages (raw messages).
-
-#### Control slave arm
-
-`MotionCtrl_2` is used to set the control command mode, taking joint mode as an example.
-
-```python
-# 0x01 Set CAN command control mode. 0x01 Set joint control mode. 50 Set robotic arm movement speed.
-piper.MotionCtrl_2(0x01, 0x01, 50)
-```
-
-`JointCtrl` is used to control six joints
-
-`GripperCtrl` is used to control the gripper
-
-Note!!!: **When controlling the slave arm, the master arm and the slave arm need to be disconnected. You can unplug the master arm's aviation plug and then run the slave arm control program. Otherwise, even if the program is executed, the slave arm will be out of control because the master arm is always sending slave arm control commands**
+Note: If the robotic arm is in master arm mode, after sending the command to switch to slave arm mode, a reboot is required for the arm to switch to slave arm mode.
